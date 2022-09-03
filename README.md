@@ -47,7 +47,9 @@ Go the ads_p/ directory
 
 (1) Configure some training parameters through the **test.yaml**.
 
+```shell
 Set **mode = 1**, **norm = 1e-4**.
+```
 
 (2) Run the following command:
 
