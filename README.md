@@ -23,6 +23,7 @@ User behavior data like rating and click has been widely used to build a persona
 
 ## 4. Usage
 ### 4.1 Run ADS_S, ADS_Pos (selection bias/ position bias)
+Go the ads/ directory and run the following command
 
 - For dataset Yahoo!R3:
 
@@ -42,16 +43,11 @@ python ADS_S.py --dataset coat
 python ADS_Pos.py --dataset simulation
 ```
 ### 4.2 Run ADS_P (popularity)
-First configure some training parameters through the **test.yaml**.
-Set **mode = 2**.
-
-`python run_recbole.py --dataset ml-1m --model BPR --config_files test.yaml`
-
-### 2.3 Run ADS
-
-First configure some training parameters through the **test.yaml**.
+Go the ads_p/ directory 
+(1) First configure some training parameters through the **test.yaml**.
 Set **mode = 1**, **norm = 1e-4**.
 
-`python run_recbole.py --dataset ml-1m --model BPR --config_files test.yaml`
-
+```shell
+python run_recbole.py --dataset ml-1m --model BPR --config_files test.yaml
+```
 
