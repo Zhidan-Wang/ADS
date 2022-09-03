@@ -1,0 +1,87 @@
+# Atomic File Format
+field_separator: "\t"
+seq_separator: " "
+
+# Common Features
+USER_ID_FIELD: user_id
+ITEM_ID_FIELD: item_id
+RATING_FIELD:
+TIME_FIELD:
+seq_len: ~
+# Label for Point-wise DataLoader
+LABEL_FIELD: label
+# NegSample Prefix for Pair-wise DataLoader
+NEG_PREFIX: neg_
+# Sequential Model Needed
+ITEM_LIST_LENGTH_FIELD: item_length
+LIST_SUFFIX: _list
+MAX_ITEM_LIST_LENGTH: 5
+POSITION_FIELD: position_id
+# Knowledge-based Model Needed
+HEAD_ENTITY_ID_FIELD: head_id
+TAIL_ENTITY_ID_FIELD: tail_id
+RELATION_ID_FIELD: relation_id
+ENTITY_ID_FIELD: entity_id
+
+# Selectively Loading
+load_col:
+    inter: [user_id, item_id, rating, timestamp]
+    item: [item_id, genre]
+unload_col: ~
+unused_col: ~
+
+# Filtering
+rm_dup_inter: ~
+lowest_val: ~
+highest_val: ~
+equal_val: ~
+not_equal_val: ~
+filter_inter_by_user_or_item: True
+max_user_inter_num: ~
+min_user_inter_num: 5
+max_item_inter_num: ~
+min_item_inter_num: 5
+
+# Preprocessing
+fields_in_same_space: ~
+preload_weight: ~
+normalize_field: ~
+normalize_all: True
+group_by_user: True
+eval_setting: RO_RS, full
+leave_one_num: 2
+stopping_step: 10
+training_neg_sample_num: 1
+topk: [5]
+split_ratio: [0.8,0.1,0.1]
+#split_ratio: [5,3,1]
+
+learning_rate: 0.00001
+weight_decay: 0.1
+imputaion_lambda: 0.001
+w1_learning_rate: 0.1
+w1_weight_decay: 0.005
+w2_learning_rate: 0.1
+w2_weight_decay: 0.005
+imputation_learning_rate: 0.01
+imputation_weight_decay: 0.5
+
+neg_pos_ratio: 5
+
+
+mode: 1
+pre_dis: False
+pre_model: False
+norm: 1e-4
+p_class: 10
+g_class: 18
+thresh: 246
+thresh1: 645
+
+split_mode: 1
+n_position: 25
+
+gpu_id: 0
+
+
+
